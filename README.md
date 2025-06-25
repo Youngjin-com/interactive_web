@@ -39,7 +39,9 @@
 **저자 유튜브 강의, 깃허브 등 학습 지원**
 
 영진닷컴 IT 유튜브 강의를 통해 저자 직강 동영상으로 책을 끝까지 실습해 보시기 바랍니다.
+
 영진닷컴 IT 유튜브 채널: https://www.youtube.com/@IT-Youngjin
+
 깃허브 주소: https://github.com/Youngjin-com/interactive_web
 
 웹 프론트엔드의 기초와 구조를 배우고 웹 UI를 완성하여 사용자 경험 중심의 인터랙티브한 웹을 구현해 보시기 바랍니다.
