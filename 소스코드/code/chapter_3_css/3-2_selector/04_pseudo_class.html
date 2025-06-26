@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3-2_selector-04_pseudo_class.html</title>
+    <link rel="stylesheet" href="../../public/css/reset.css" />
+    <link rel="stylesheet" href="../../public/css/chapter_3/3-2_selector/04_pseudo_class.css" />
+  </head>
+
+  <body>
+    <main class="main">
+      <h1 class="sr-only">선택자</h1>
+      <section>
+        <h2 class="sr-only">가상 클래스선택자</h2>
+        <article class="news">
+          <h3 class="news_title">hover</h3>
+          <div class="news_content">active</div>
+          <form action="/">
+            <label for="name">이름 : </label>
+            <input type="text" id="name" name="name" value="" placeholder="focus" class="news_input" />
+          </form>
+        </article>
+      </section>
+      <section>
+        <h2 class="sr-only">nth-of-type, nth-child</h2>
+        <article class="news">
+          <div class="news_content">nth-of-type 1</div>
+          <p class="news_content">nth-of-type 2</p>
+          <p class="news_content">nth-of-type 3</p>
+          <div class="news_content">nth-of-type 4</div>
+          <div class="news_content">nth-of-type 5</div>
+          <p class="news_content">nth-of-type 6</p>
+          <p class="news_content">nth-of-type 7</p>
+          <div class="news_content">nth-of-type 8</div>
+          <div class="news_content">nth-of-type 9</div>
+          <p class="news_content">nth-of-type 10</p>
+          <p class="news_content">nth-of-type 11</p>
+          <div class="news_content">nth-of-type 12</div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4-2_fade-03_transition.html</title>
+    <link rel="stylesheet" href="../../public/css/reset.css" />
+    <link rel="stylesheet" href="../../public/css/common.css" />
+    <link rel="stylesheet" href="../../public/css/chapter_4/4-2_fade/03_transition.css" />
+    <script>
+      function toggleActive(e) {
+        const $currentArticle = e.currentTarget.parentElement.parentElement;
+        $currentArticle.classList.toggle('active');
+      }
+    </script>
+  </head>
+
+  <body>
+    <main class="main">
+      <h1 class="heading_1">Transition</h1>
+      <section class="container">
+        <h2>Transition Examples</h2>
+        <article class="opacity">
+          <div class="head">
+            <h3>opacity</h3>
+            <button type="button" onclick="toggleActive(event)">Active</button>
+          </div>
+          <div class="body">
+            <span class="ease" data-transition>ease</span>
+            <span class="ease-in" data-transition>ease-in</span>
+            <span class="ease-out" data-transition>ease-out</span>
+            <span class="cubic" data-transition>bezier</span>
+          </div>
+        </article>
+        <article class="translate">
+          <div class="head">
+            <h3>transform - translate</h3>
+            <button type="button" onclick="toggleActive(event)">Active</button>
+          </div>
+          <div class="body">
+            <span class="ease" data-transition>ease</span>
+            <span class="ease-in" data-transition>ease-in</span>
+            <span class="ease-out" data-transition>ease-out</span>
+            <span class="cubic" data-transition>bezier</span>
+          </div>
+        </article>
+        <article class="rotate">
+          <div class="head">
+            <h3>transform - rotate</h3>
+            <button type="button" onclick="toggleActive(event)">Active</button>
+          </div>
+          <div class="body">
+            <span class="ease" data-transition>ease</span>
+            <span class="ease-in" data-transition>ease-in</span>
+            <span class="ease-out" data-transition>ease-out</span>
+            <span class="cubic" data-transition>bezier</span>
+          </div>
+        </article>
+        <article class="scale">
+          <div class="head">
+            <h3>transform - scale</h3>
+            <button type="button" onclick="toggleActive(event)">Active</button>
+          </div>
+          <div class="body">
+            <span class="ease" data-transition>ease</span>
+            <span class="ease-in" data-transition>ease-in</span>
+            <span class="ease-out" data-transition>ease-out</span>
+            <span class="cubic" data-transition>bezier</span>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

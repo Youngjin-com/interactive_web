@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+* {
+  box-sizing: border-box;
+}
+
+div {
+  width: 400px;
+  height: 400px;
+  padding: 30px;
+  border: 2px solid dodgerblue;
+}
+
+/* ol, ul의 브라우저의 기본 list-style 제거 */
+ol,
+ul {
+  list-style: none;
+}
+
+/* 자손 선택자 사용 */
+ol li {
+  display: block;
+  width: 120px;
+  height: 80px;
+  margin: 10px;
+  padding: 20px;
+  background-color: darkcyan;
+  color: white;
+}
+
+/* 자식 선택자 사용 */
+ol > li {
+  display: block;
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  padding: 30px;
+  border: 2px solid #cccccc;
+  background-color: initial;
+  color: initial;
+}

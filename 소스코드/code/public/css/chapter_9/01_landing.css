@@ -1,0 +1,281 @@
+@charset "utf-8";
+
+@layer base, components;
+@layer base {
+  :root {
+    /* Font Families */
+    --font-family-Noto: 'Noto Sans';
+    --font-family-Dancing: 'Dancing Script';
+
+    /* Font Sizes */
+    --font-size: 1rem;
+    --font-size-big: 1.5rem;
+    --font-size-title: 2rem;
+
+    /* Line Heights */
+    --line-height: 1.4;
+
+    /* Color Palette */
+    --color-link: blue;
+    --color-link-hover: dodgerblue;
+    --color-black: #000000;
+  }
+}
+
+@layer components {
+  a {
+    color: var(--color-link, blue);
+    transition: 0.3s ease-in-out;
+    &:focus {
+      color: var(--color-link-hover, var(--color-link, blue));
+    }
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-link-hover, var(--color-link, blue));
+      }
+    }
+  }
+}
+
+/* 부드러운 스크롤 행동 설정 */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory; /* Y축 방향으로 스냅 포인트 강제 적용 */
+  overflow-x: hidden; /* 가로 스크롤 막기 */
+}
+
+/* 기본 body 스타일 */
+body {
+  opacity: 0;
+  transition: opacity 0.5s;
+  text-rendering: optimizeLegibility; /* 글자 가독성 최적화 */
+  font-family: var(--font-family-Noto, sans-serif);
+  font-size: var(--font-size, 1rem);
+  line-height: var(--line-height, 1.4);
+  background-color: var(--color-background, white);
+}
+
+/* 헤더 고정 및 스타일 설정 */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 0 3%;
+
+  & .header_contents {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
+
+  & .logo a {
+    font-family: var(--font-family-Dancing);
+    font-size: var(--font-size-big);
+    color: var(--color-black);
+  }
+
+  & .navigation ul {
+    display: flex;
+    & li a {
+      padding: 0 1rem;
+      color: var(--color-highlight);
+      &.active {
+        color: var(--color-black);
+      }
+    }
+  }
+}
+
+/* 메인 섹션 스타일 및 스크롤 스냅 설정 */
+main .section {
+  margin: 0 auto;
+  height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  view-timeline: --content;
+}
+
+/* 컨텐츠 스타일 및 애니메이션 효과 적용 */
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  animation: zoom-effect ease-in-out both;
+  animation-timeline: --content;
+
+  & .title {
+    flex-shrink: 0;
+    padding: 0 1rem;
+    font-size: 1.8rem;
+    font-family: var(--font-family-Dancing);
+    color: var(--color-highlight);
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translate3d(-1rem, 0, 0);
+    transition:
+      0.5s opacity 0.5s,
+      0.5s transform 0.5s;
+
+    .active & {
+      visibility: visible;
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  & .text_wrap {
+    width: 100%;
+    word-break: keep-all;
+    & img {
+      display: block;
+      float: inline-start;
+      position: relative;
+      shape-margin: 0.2rem;
+      padding: 0 3%;
+      #flower & {
+        shape-outside: url(../../img/pixabay/flower.png);
+      }
+      #bluebird & {
+        shape-outside: url(../../img/pixabay/bluebird.png);
+      }
+      #heart & {
+        shape-outside: url(../../img/pixabay/heart.png);
+      }
+      #banana & {
+        shape-outside: url(../../img/pixabay/banana.png);
+      }
+      #orange & {
+        max-width: 480px;
+        shape-outside: url(../../img/pixabay/orange.png);
+      }
+    }
+    & .text {
+      margin-top: 7rem;
+      font-size: var(--font-size-big);
+      color: var(--color-highlight);
+
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1s 0.5s;
+      .active & {
+        opacity: 0.5;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+/* 반응형 디자인에 따른 스타일 조정 */
+@media (max-width: 1280px) {
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 3%;
+
+    & .title {
+      padding: 0;
+      padding-bottom: 2rem;
+      text-align: center;
+      transform: translate3d(0, -1rem, 0);
+    }
+
+    & .text_wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      & img {
+        float: none;
+        max-width: 50dvw;
+        max-height: calc(100dvh - 24rem);
+        #orange & {
+          max-width: 50dvw;
+        }
+      }
+      & .text {
+        text-align: center;
+        margin-top: 2rem;
+        .banana & {
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
+}
+
+/* 화면 크기에 따른 폰트 크기 조정 */
+@media (max-width: 1024px) {
+  html {
+    font-size: 12px; /* 작은 화면에 맞춰 폰트 크기 축소 */
+  }
+  .content {
+    & .text_wrap {
+      & .text {
+        max-width: 60dvw;
+        font-size: 1.2rem;
+        & br {
+          display: none; /* 작은 화면에서 줄바꿈 제거 */
+        }
+      }
+    }
+  }
+}
+
+/* 매우 작은 화면에서 로고 숨기기 및 헤더 스타일 조정 */
+@media (max-width: 640px) {
+  header {
+    & .header_contents {
+      justify-content: center;
+    }
+    & .logo {
+      display: none; /* 로고 숨기기 */
+    }
+  }
+}
+
+/* 줌 효과 애니메이션 정의 */
+@keyframes zoom-effect {
+  0% {
+    visibility: hidden;
+    filter: blur(2rem);
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    visibility: visible;
+    filter: blur(0);
+    transform: none;
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    filter: blur(1rem);
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* scroll() 기능을 지원하지 않는 브라우저에 대한 대체 스타일 */
+@supports not (animation-timeline: scroll()) {
+  .navigation {
+    display: none; /* 네비게이션 숨기기 */
+  }
+  .content {
+    position: relative;
+  }
+}

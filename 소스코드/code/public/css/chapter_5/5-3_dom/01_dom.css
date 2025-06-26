@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+section {
+  width: 100%;
+  max-width: 1024px;
+  margin: 50px auto 0;
+  padding: 30px;
+  background-color: skyblue;
+  line-height: 1.5;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+/* getElementsByClassName */
+[data-id='test_data'] {
+  background-color: gold;
+}
+
+/* getElementsByTagName */
+[data-id='test-color'] {
+  color: orange;
+}
+
+.test-color {
+  background-color: #666;
+}
+
+/* querySelector */
+#data-id {
+  background-color: rgba(255, 22, 192, 70%);
+}
+
+/* querySelectorAll */
+[data-query] {
+  color: red;
+}
+
+/* 노드 조작 */
+.node_manipulation .create_element {
+  color: blue;
+}
+
+.node_manipulation .color-purple {
+  color: purple;
+}
+
+/* 근처 노드 접근 */
+.node_traversing > div {
+  position: relative;
+  padding: 20px;
+}
+
+.node_traversing > div ~ div::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+
+.node_traversing .parent[data-traversing] {
+  background-color: #ecefef;
+}
+
+.node_traversing .child[data-traversing] {
+  color: red;
+}
+
+.node_traversing #child_child {
+  color: blue;
+}
+
+.node_traversing .prev[data-traversing],
+.node_traversing .next[data-traversing] {
+  color: purple;
+}
+
+.node_traversing .first[data-traversing],
+.node_traversing .last[data-traversing] {
+  color: blue;
+}
+
+/* 요소의 위치와 크기 */
+.position_width {
+  position: relative;
+  width: 500px;
+  margin-bottom: 300px;
+  padding: 150px;
+  border: 5px solid dodgerblue;
+}
+
+.position_width .position {
+  position: absolute;
+  right: 10px;
+  left: 15px;
+  top: 10px;
+  padding: 10px;
+  border: 3px solid dodgerblue;
+  border-left-width: 5px;
+  background-color: white;
+}
+
+.position_width .size {
+  position: absolute;
+  left: 10px;
+  right: 35px;
+  bottom: 10px;
+  padding: 15px;
+  border: 1px solid gray;
+  border-left-width: 10px;
+  background-color: white;
+}

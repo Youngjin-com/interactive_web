@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather - 날씨 애플리케이션 만들기</title>
+    <meta name="description" content="날씨 애플리케이션 만들기 예제입니다." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../public/css/reset.css" />
+    <link rel="stylesheet" href="../public/css/common.css" />
+    <link rel="stylesheet" href="../public/css/chapter_10/01_weather.css" />
+    <script type="module" src="../public/js/chapter_10/01_weather.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <h1 class="sr-only">날씨</h1>
+      <div class="video_background">
+        <video muted="muted" preload="none" loop="loop" autoplay>
+          <source type="video/mp4" data-weather="video" src="../public/video/weather.mp4" />
+        </video>
+      </div>
+      <article class="contents">
+        <h2 class="sr-only">날씨 정보</h2>
+        <div class="contents_head">
+          <div class="form">
+            <form class="form_search">
+              <input type="text" class="input_search" name="city" placeholder="도시를 검색 해보세요." autocomplete="off" />
+              <button class="btn_search">검색</button>
+            </form>
+            <ul class="city_list"></ul>
+            <div class="msg_error">...</div>
+            <div class="msg_loading">...</div>
+          </div>
+          <ul class="type_temperature">
+            <li class="active" data-type="metric">° C</li>
+            <li data-type="imperial">° F</li>
+          </ul>
+        </div>
+        <div class="contents_body">
+          <p class="temperature"><span data-weather="temperature">0</span><i>°</i></p>
+          <strong data-weather="city">도시 이름</strong>
+          <p data-weather="time">시간</p>
+          <i data-weather="icon"></i>
+          <p data-weather="type">날씨</p>
+          <div class="min_max">
+            <p>최저: <span data-weather="min">0</span>°</p>
+            <p>최고: <span data-weather="max">0</span>°</p>
+          </div>
+        </div>
+        <ul class="contents_footer">
+          <li class="list">
+            <span>체감온도</span>
+            <span data-weather="feel">0°</span>
+          </li>
+          <li class="list">
+            <span>풍속</span>
+            <span data-weather="wind">0 m/s</span>
+          </li>
+          <li class="list">
+            <span>습도</span>
+            <span data-weather="humidity">0%</span>
+          </li>
+          <li class="list">
+            <span>기압</span>
+            <span data-weather="pressure">0 hPa</span>
+          </li>
+        </ul>
+      </article>
+    </main>
+  </body>
+</html>

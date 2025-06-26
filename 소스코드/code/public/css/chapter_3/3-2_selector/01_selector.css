@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+/* 태그선택자 사용 */
+
+* {
+  box-sizing: border-box;
+}
+
+div {
+  width: 400px;
+  height: 400px;
+  padding: 30px;
+  border: 2px solid dodgerblue;
+}
+
+span {
+  display: block;
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  padding: 30px;
+  border: 2px solid #cccccc;
+}
+
+em {
+  display: block;
+  width: 120px;
+  height: 80px;
+  margin: 10px;
+  padding: 20px;
+  background-color: darkcyan;
+  color: white;
+}

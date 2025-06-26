@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+.svg_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 50px auto;
+}

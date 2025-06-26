@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5-4_event-01_mouse.html</title>
+    <link rel="stylesheet" href="../../public/css/reset.css" />
+    <link rel="stylesheet" href="../../public/css/common.css" />
+    <link rel="stylesheet" href="../../public/css/chapter_5/5-4_event/01_mouse.css" />
+    <script src="../../public/js/chapter_5/5-4_event/01_mouse.js" defer></script>
+  </head>
+
+  <body>
+    <main class="main">
+      <h1>Mouse Event</h1>
+      <div class="options">
+        <label class="js-colorPicker color_picker">
+          <input type="color" />
+          <span class="current_color_picker"></span>
+        </label>
+        <label class="js-pencilRange pencil_range">
+          <input type="range" min="1" max="50" />
+          <span class="current_pencil_range"></span>
+        </label>
+      </div>
+      <canvas class="js-painter paint" width="600" height="400"></canvas>
+      <button type="button" class="js-eraseAll btn">모두 지우기</button>
+      <p>* 우측 마우스를 눌러서 초기화를 할 수 있습니다.</p>
+    </main>
+  </body>
+</html>

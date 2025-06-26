@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3-4_resources-01_images.html</title>
+    <link rel="stylesheet" href="../../public/css/reset.css" />
+    <link rel="stylesheet" href="../../public/css/common.css" />
+    <link rel="stylesheet" href="../../public/css/chapter_3/3-4_resources/01_images.css" />
+  </head>
+
+  <body>
+    <main class="main">
+      <h1 class="heading_1">Images</h1>
+      <div>
+        <img src="../../public/img/unsplash/item_06.jpg" alt="회색 코트를 입고 검은색 크로스백을 하고 걸어가는 남성의 뒷모습" />
+        <img src="../../public/img/pixabay/leaf.png" alt="초록 빛을 띄는 나무가지" />
+
+        <picture>
+          <source srcset="../../public/img/unsplash/item_08.webp" type="image/webp" />
+          <source srcset="../../public/img/unsplash/item_08.jpg" type="image/jpeg" />
+          <img src="../../public/img/unsplash/item_08.jpg" alt="왼손으로 도화지를 들고 파란색 붓으로 분홍색 꽃을 터치하고 있는 사람의 오른손" />
+        </picture>
+
+        <span class="bg_webp">
+          <span class="sr-only">기하학적인 푸른 회색빛의 철제 건축물</span>
+        </span>
+      </div>
+    </main>
+  </body>
+</html>

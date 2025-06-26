@@ -1,0 +1,27 @@
+{
+  "recommendations": [
+    "wallabyjs.quokka-vscode",
+    "sainoba.px-to-rem",
+    "formulahendry.auto-close-tag",
+    "esbenp.prettier-vscode",
+    "ritwickdey.liveserver",
+    "visualstudioexptteam.vscodeintellicode",
+    "dbaeumer.vscode-eslint",
+    "ecmel.vscode-html-css",
+    "vscode-icons-team.vscode-icons",
+    "formulahendry.auto-rename-tag",
+    "xabikos.javascriptsnippets",
+    "christian-kohler.path-intellisense",
+    "streetsidesoftware.code-spell-checker",
+    "zignd.html-css-class-completion",
+    "naumovs.color-highlight",
+    "oderwat.indent-rainbow",
+    "alefragnani.project-manager",
+    "steoates.autoimport",
+    "ms-ceintl.vscode-language-pack-ko",
+    "usernamehw.errorlens",
+    "kisstkondoros.vscode-gutter-preview",
+    "shardulm94.trailing-spaces",
+    "pucelle.vscode-css-navigation"
+  ]
+}

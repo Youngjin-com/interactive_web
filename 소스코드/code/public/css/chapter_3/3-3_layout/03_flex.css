@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  max-width: 1024px;
+  height: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #73e3ff91;
+  counter-reset: items;
+}
+
+.flex-container .flex-items {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 20%;
+  margin: 10px;
+}
+
+.flex-container .flex-items:nth-of-type(7) {
+  flex: 1 1 700px;
+  order: -1;
+}
+
+.flex-container .count::before {
+  counter-increment: items;
+  content: counter(items);
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: #fff;
+  text-shadow: 2px 2px 3px rgba(0, 0, 233, 1);
+  font-size: 20px;
+}

@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="ko-KR" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01_dashboard.html</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../public/css/reset.css" />
+    <link rel="stylesheet" href="../public/css/common.css" />
+    <link rel="stylesheet" href="../public/css/chapter_8/01_dashboard.css" />
+    <script type="module" src="../public/js/chapter_8/01_dashboard.js" defer></script>
+  </head>
+
+  <body>
+    <main>
+      <!-- header -->
+      <header>
+        <div class="top_left">
+          <button type="button" class="svg_icon svg_hamburger hover js-notWorking">
+            <!-- public/img/freesvg/icn_hamburger.svg -->
+            <svg viewBox="0 0 24 24" fill="none">
+              <title>모바일 메뉴</title>
+              <path d="M4 17H20M4 12H20M4 7H20" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <h1>운동 다이어리</h1>
+        </div>
+        <div class="top_right">
+          <form action="./01_dashboard.html" method="get" class="search">
+            <label for="search">
+              <input type="search" id="search" name="searchWords" placeholder="검색어를 입력하세요." autocomplete="off" autofocus />
+            </label>
+            <button class="svg_icon svg_zoom">
+              <!-- public/img/freesvg/icn_zoom.svg -->
+              <svg viewBox="0 0 24 24" fill="none">
+                <title>찾기</title>
+                <path
+                  d="M20 20L15.8033 15.8033M18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18C14.6421 18 18 14.6421 18 10.5Z"
+                  stroke="#000000"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </form>
+          <button type="button" class="svg_icon hover svg_theme js-theme">
+            <!-- public/img/freesvg/icn_moon.svg -->
+            <svg viewBox="0 0 24 24" fill="none" class="svg_sun" data-theme="dark">
+              <title>라이트 테마로 변경</title>
+              <path
+                d="M4.67199 18.7967C3.97348 18.2328 4.55832 17.2239 5.45256 17.1452C11.2419 16.6357 15.0596 10.0755 12.4592 5.00063C12.0486 4.19926 12.5832 3.13003 13.4466 3.38559C17.2438 4.50955 20 7.94173 20 12C20 16.9715 16.1189 21 11 21C8.65964 21 6.38082 20.1762 4.67199 18.7967Z"
+                stroke="#000000"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <!-- public/img/freesvg/icn_sun.svg -->
+            <svg viewBox="0 0 24 24" fill="none" class="svg_moon" data-theme="light">
+              <title>다크 테마로 변경</title>
+              <path
+                d="M3 12H5M5.00006 19L7.00006 17M12 19V21M17 17L19 19M5 5L7 7M19 12H21M16.9999 7L18.9999
+                            5M12 3V5M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12
+                            9C13.6569 9 15 10.3431 15 12Z"
+                stroke="#000000"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <button type="button" class="svg_icon hover svg_alarm js-notWorking">
+            <!-- public/img/freesvg/icn_alarm.svg -->
+            <svg viewBox="0 0 24 24" fill="none">
+              <title>알람 리스트 보기</title>
+              <path
+                d="M9 17V18C9 18.394 9.0776 18.7841 9.22836 19.1481C9.37913 19.512 9.6001 19.8427 9.87868 20.1213C10.1573 20.3999 10.488 20.6209 10.8519 20.7716C11.2159 20.9224 11.606 21 12 21C12.394 21 12.7841 20.9224 13.1481 20.7716C13.512 20.6209 13.8427 20.3999 14.1213 20.1213C14.3999 19.8427 14.6209 19.512 14.7716 19.1481C14.9224 18.7841 15 18.394 15 18V17M18 9C18 12 20 17 20 17H4C4 17 6 13 6 9C6 5.732 8.732 3 12 3C15.268 3 18 5.732 18 9Z"
+                stroke="#000000"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <button type="button" class="profile js-notWorking">
+            <img src="../public/img/dalle/dalle_women_smile.webp" alt="" />
+            <span class="name">Noel</span>
+          </button>
+          <button type="button" class="svg_icon svg_bubble hover active js-openCommunity">
+            <!-- public/img/freesvg/icn_chat.svg -->
+            <svg viewBox="0 0 24 24" fill="none">
+              <title>커뮤니티 창 열기</title>
+              <path
+                d="M8 9.5H15M8 13.5H13M15.3 19.1L21 21L19.1 15.3C19.1 15.3 20 14 20 11.5C20 6.80558 16.1944 3 11.5 3C6.80558 3 3 6.80558 3 11.5C3 16.1944 6.80558 20 11.5 20C14.0847 20 15.3 19.1 15.3 19.1Z"
+                stroke="#000000"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </header>
+      <!-- container -->
+      <section class="container">
+        <h2 class="sr-only">주요 내용</h2>
+        <div class="main_content">
+          <!-- community -->
+          <article class="article community js-community">
+            <h3>커뮤니티</h3>
+            <button type="button" class="svg_icon svg_close js-closeCommunity">
+              <!-- public/img/freesvg/icn_close.svg -->
+              <svg viewBox="0 0 24 24" fill="none">
+                <title>커뮤니티 창 닫기</title>
+                <path
+                  d="M16 8L8 16M8.00001 8L16 16M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                  stroke="#000000"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <ul class="board js-favorite">
+              <li class="list">
+                <span class="profile">
+                  <img src="../public/img/dalle/dalle_women_smile_2.webp" alt="" />
+                </span>
+                <div class="preview">
+                  <div class="title">
+                    <p class="name">같이 운동하실분</p>
+                    <button type="button" class="svg_icon svg_favorite">
+                      <!-- public/img/freesvg/icn_heart.svg -->
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <title>좋아요</title>
+                        <path
+                          d="M4.3314 12.0474L12 20L19.6686 12.0474C20.5211 11.1633 21 9.96429 21 8.71405C21 6.11055 18.9648 4 16.4543 4C15.2487 4 14.0925 4.49666 13.24 5.38071L12 6.66667L10.76 5.38071C9.90749 4.49666 8.75128 4 7.54569 4C5.03517 4 3 6.11055 3 8.71405C3 9.96429 3.47892 11.1633 4.3314 12.0474Z"
+                          stroke="#000000"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <span class="text"> 안녕하세요 여러분. 🏋️‍♂️ 오늘의 운동 목표는 헬스장에서 스쿼트 30회! 💪 당신의 헌신이 멋진 결과로 이어질 거예요! 🌟 </span>
+                  <p class="date">1월 10일</p>
+                </div>
+              </li>
+              <li class="list">
+                <span class="profile">
+                  <img src="../public/img/dalle/dalle_women_smile_3.webp" alt="" />
+                </span>
+                <div class="preview">
+                  <div class="title">
+                    <p class="name">오늘 오후 3시에 요가 하실분 모집합니다</p>
+                    <button type="button" class="svg_icon svg_favorite">
+                      <!-- public/img/freesvg/icn_heart.svg -->
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <title>좋아요</title>
+                        <path
+                          d="M4.3314 12.0474L12 20L19.6686 12.0474C20.5211 11.1633 21 9.96429 21 8.71405C21 6.11055 18.9648 4 16.4543 4C15.2487 4 14.0925 4.49666 13.24 5.38071L12 6.66667L10.76 5.38071C9.90749 4.49666 8.75128 4 7.54569 4C5.03517 4 3 6.11055 3 8.71405C3 9.96429 3.47892 11.1633 4.3314 12.0474Z"
+                          stroke="#000000"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <span class="text"> 🧘‍♂️ 요가로 마음도 몸도 평화를 찾아보세요. 오늘은 명상과 함께 힐링의 시간을 가질 수 있어요. 🕊️ </span>
+                  <p class="date">1월 10일</p>
+                </div>
+              </li>
+              <li class="list">
+                <span class="profile">
+                  <img src="../public/img/dalle/dalle_man_smile.webp" alt="" />
+                </span>
+                <div class="preview">
+                  <div class="title">
+                    <p class="name">수영장에서 함께해요</p>
+                    <button type="button" class="svg_icon svg_favorite">
+                      <!-- public/img/freesvg/icn_heart.svg -->
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <title>좋아요</title>
+                        <path
+                          d="M4.3314 12.0474L12 20L19.6686 12.0474C20.5211 11.1633 21 9.96429 21 8.71405C21 6.11055 18.9648 4 16.4543 4C15.2487 4 14.0925 4.49666 13.24 5.38071L12 6.66667L10.76 5.38071C9.90749 4.49666 8.75128 4 7.54569 4C5.03517 4 3 6.11055 3 8.71405C3 9.96429 3.47892 11.1633 4.3314 12.0474Z"
+                          stroke="#000000"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <span class="text"> 🏊‍♀️ 수영은 완벽한 전신 운동이에요! 오늘 수영장에서 몇 바퀴 돌아볼까요? 물속에서의 힘찬 파동을 느껴보세요! 🌊 </span>
+                  <p class="date">12월 10일</p>
+                </div>
+              </li>
+              <li class="list">
+                <span class="profile">
+                  <img src="../public/img/dalle/dalle_man_smile2.webp" alt="" />
+                </span>
+                <div class="preview">
+                  <div class="title">
+                    <p class="name">[공지] 걷기 스쿨 오픈</p>
+                    <button type="button" class="svg_icon svg_favorite">
+                      <!-- public/img/freesvg/icn_heart.svg -->
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <title>좋아요</title>
+                        <path
+                          d="M4.3314 12.0474L12 20L19.6686 12.0474C20.5211 11.1633 21 9.96429 21 8.71405C21 6.11055 18.9648 4 16.4543 4C15.2487 4 14.0925 4.49666 13.24 5.38071L12 6.66667L10.76 5.38071C9.90749 4.49666 8.75128 4 7.54569 4C5.03517 4 3 6.11055 3 8.71405C3 9.96429 3.47892 11.1633 4.3314 12.0474Z"
+                          stroke="#000000"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <span class="text"> 안녕하세요. 🚶‍♂️ 걷기 좋은 날씨네요! 밖에 나가서 신선한 공기를 마시며 걸어보세요. 건강에도 좋고, 마음도 가볍게 만들어줄 거예요! 🍃 </span>
+                  <p class="date">8월 10일</p>
+                </div>
+              </li>
+              <li class="list">
+                <span class="profile">
+                  <img src="../public/img/dalle/dalle_women_smile.webp" alt="" />
+                </span>
+                <div class="preview">
+                  <div class="title">
+                    <p class="name">자전거 동호회원 모집</p>
+                    <button type="button" class="svg_icon svg_favorite">
+                      <!-- public/img/freesvg/icn_heart.svg -->
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <title>좋아요</title>
+                        <path
+                          d="M4.3314 12.0474L12 20L19.6686 12.0474C20.5211 11.1633 21 9.96429 21 8.71405C21 6.11055 18.9648 4 16.4543 4C15.2487 4 14.0925 4.49666 13.24 5.38071L12 6.66667L10.76 5.38071C9.90749 4.49666 8.75128 4 7.54569 4C5.03517 4 3 6.11055 3 8.71405C3 9.96429 3.47892 11.1633 4.3314 12.0474Z"
+                          stroke="#000000"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <span class="text"> 🚴‍♀️ 아침 일찍 자전거 타기로 하루를 시작하면 기분도 상쾌해지고, 활력도 넘칠 거예요! ✨ </span>
+                  <p class="date">3월 11일</p>
+                </div>
+              </li>
+            </ul>
+          </article>
+          <!-- exercises -->
+          <article class="article exercises js-viewType" data-type="list">
+            <div class="title">
+              <h3>운동 계획</h3>
+              <div class="date">D-20</div>
+            </div>
+            <div class="util">
+              <ol class="progress">
+                <li class="list">
+                  <em class="count">80</em>
+                  <span class="text">푸쉬업</span>
+                </li>
+                <li class="list">
+                  <em class="count">60</em>
+                  <span class="text">딥스</span>
+                </li>
+                <li class="list">
+                  <em class="count">10</em>
+                  <span class="text">플랭크</span>
+                </li>
+                <li class="list">
+                  <em class="count">20</em>
+                  <span class="text">버피</span>
+                </li>
+              </ol>
+              <div class="view_change js-viewChange">
+                <button type="button" class="svg_icon hover svg_list" data-type="list">
+                  <!-- public/img/freesvg/icn_list.svg -->
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <title>리스트형으로 보기</title>
+                    <path d="M8 8H19M8 12H19M8 16H19M5 8V8.00999M5 12V12.01M5 16V16.01" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <button type="button" class="svg_icon hover svg_thumbnail" data-type="thumbnail">
+                  <!-- public/img/freesvg/icn_thumbnail.svg -->
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <title>썸네일형으로 보기</title>
+                    <path
+                      d="M6.75 3C3.88235 3 3 3.88235 3 6.75C3 9.61765 3.88235 10.5 6.75 10.5C9.61765 10.5 10.5 9.61765 10.5 6.75C10.5 3.88235 9.61765 3 6.75 3Z"
+                      stroke="#000000"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M6.75 13.5C3.88235 13.5 3 14.3824 3 17.25C3 20.1176 3.88235 21 6.75 21C9.61765 21 10.5 20.1176 10.5 17.25C10.5 14.3824 9.61765 13.5 6.75 13.5Z"
+                      stroke="#000000"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M17.25 13.5C14.3824 13.5 13.5 14.3824 13.5 17.25C13.5 20.1176 14.3824 21 17.25 21C20.1176 21 21 20.1176 21 17.25C21 14.3824 20.1176 13.5 17.25 13.5Z"
+                      stroke="#000000"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M17.25 3C14.3824 3 13.5 3.88235 13.5 6.75C13.5 9.61765 14.3824 10.5 17.25 10.5C20.1176 10.5 21 9.61765 21 6.75C21 3.88235 20.1176 3 17.25 3Z"
+                      stroke="#000000"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <!-- data-type 의해서 다른 뷰를 보여줌 -->
+            <ul class="view_container js-viewContainer">
+              <li class="list">
+                <div class="info">
+                  <div class="top">
+                    <span class="date">2024년 11월 3일</span>
+                    <button type="button" class="svg_icon svg_more js-notWorking">
+                      <!-- public/img/freesvg/icn_more_vertical.svg -->
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <title>더 보기</title>
+                        <path
+                          d="M13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6C12.5523 6 13 5.55228 13 5Z"
+                          stroke="#000000"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12Z"
+                          stroke="#000000"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19Z"
+                          stroke="#000000"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <em class="title">수영</em>
+                  <span class="sub_title">자유형 훈련</span>
+                </div>
+                <div class="graph">
+                  <progress value="55" max="100"></progress>
+                  <span class="percent">55%</span>
+                </div>
+              </li>
+              <li class="list">
+                <div class="info">
+                  <div class="top">
+                    <span class="date">2024년 10월 12일</span>
+                    <button type="button" class="svg_icon svg_more js-notWorking">
+                      <!-- public/img/freesvg/icn_more_vertical.svg -->
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <title>더 보기</title>
+                        <path
+                          d="M13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6C12.5523 6 13 5.55228 13 5Z"
+                          stroke="#000000"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12Z"
+                          stroke="#000000"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19Z"
+                          stroke="#000000"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <em class="title">달리기</em>
+                  <span class="sub_title">스프린트 훈련</span>
+                </div>
+                <div class="graph">
+                  <progress value="10" max="100"></progress>
+                  <span class="percent">10%</span>
+                </div>
+              </li>
+              <li class="list">
+                <div class="info">
+                  <div class="top">
+                    <span class="date">2024년 11월 31일</span>
+                    <button type="button" class="svg_icon svg_more js-notWorking">
+                      <!-- public/img/freesvg/icn_more_vertical.svg -->
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <title>더 보기</title>
+                        <path
+                          d="M13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6C12.5523 6 13 5.55228 13 5Z"
+                          stroke="#000000"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12Z"
+                          stroke="#000000"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19Z"
+                          stroke="#000000"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <em class="title">축구</em>
+                  <span class="sub_title">프리킥 훈련</span>
+                </div>
+                <div class="graph">
+                  <progress value="90" max="100"></progress>
+                  <span class="percent">90%</span>
+                </div>
+              </li>
+              <li class="list">
+                <div class="info">
+                  <div class="top">
+                    <span class="date">2024년 1월 9일</span>
+                    <button type="button" class="svg_icon svg_more js-notWorking">
+                      <!-- public/img/freesvg/icn_more_vertical.svg -->
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <title>더 보기</title>
+                        <path
+                          d="M13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6C12.5523 6 13 5.55228 13 5Z"
+                          stroke="#000000"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12Z"
+                          stroke="#000000"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19Z"
+                          stroke="#000000"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <em class="title">배드민턴</em>
+                  <span class="sub_title">스매시 훈련</span>
+                </div>
+                <div class="graph">
+                  <progress value="22" max="100"></progress>
+                  <span class="percent">22%</span>
+                </div>
+              </li>
+              <li class="list">
+                <div class="info">
+                  <div class="top">
+                    <span class="date">2024년 1월 10일</span>
+                    <button type="button" class="svg_icon svg_more js-notWorking">
+                      <!-- public/img/freesvg/icn_more_vertical.svg -->
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <title>더 보기</title>
+                        <path
+                          d="M13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6C12.5523 6 13 5.55228 13 5Z"
+                          stroke="#000000"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12Z"
+                          stroke="#000000"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19Z"
+                          stroke="#000000"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <em class="title">골프</em>
+                  <span class="sub_title">퍼터 훈련</span>
+                </div>
+                <div class="graph">
+                  <progress value="5" max="100"></progress>
+                  <span class="percent">5%</span>
+                </div>
+              </li>
+              <li class="list">
+                <div class="info">
+                  <div class="top">
+                    <span class="date">2024년 2월 5일</span>
+                    <button type="button" class="svg_icon svg_more js-notWorking">
+                      <!-- public/img/freesvg/icn_more_vertical.svg -->
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <title>더 보기</title>
+                        <path
+                          d="M13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6C12.5523 6 13 5.55228 13 5Z"
+                          stroke="#000000"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12Z"
+                          stroke="#000000"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19Z"
+                          stroke="#000000"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <em class="title">농구</em>
+                  <span class="sub_title">레이업 훈련</span>
+                </div>
+                <div class="graph">
+                  <progress value="100" max="100"></progress>
+                  <span class="percent">100%</span>
+                </div>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

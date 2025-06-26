@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+main {
+  width: 1400px;
+  margin: 30px auto;
+  font-size: 30px;
+}
+
+h2 {
+  margin: 30px auto 60px;
+  text-align: center;
+}
+
+.container {
+  background-color: seashell;
+}
+
+.container img {
+  display: block;
+  width: 100%;
+}
+
+svg {
+  display: block;
+  margin: 0 auto;
+}

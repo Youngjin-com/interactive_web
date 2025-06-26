@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5-1_javascript-01_javascript.html</title>
+    <link rel="stylesheet" href="../../public/css/reset.css" />
+    <link rel="stylesheet" href="../../public/css/common.css" />
+    <link rel="stylesheet" href="../../public/css/chapter_5/5-1_javascript/01_javascript.css" />
+  </head>
+
+  <body>
+    <main class="main">
+      <h1 class="heading_1">JavaScript</h1>
+      <section class="container">
+        <h2 class="sr-only">JavaScript 사용 방법</h2>
+        <article class="contents">
+          <h3>JavaScript 이야기</h3>
+          <p>
+            JavaScript와 Java는 완전히 다른 프로그래밍 언어이며, 각각의 언어는 특정한 목적과 환경에 맞게 설계되었습니다. <br />
+            두 언어의 이름이 비슷한 것은 마케팅 전략의 일환이었으며, 실제로는 서로 관련이 없습니다.
+          </p>
+        </article>
+        <article class="contents">
+          <h3>Inline JavaScript 사용하기</h3>
+          <p>
+            Inline JavaScript는 HTML 요소 내에 직접 JavaScript를 작성하는 방법입니다. <br />
+            코드 양을 적게 작성할 수는 있는데, HTML과 JavaScript 코드가 혼재하여 가독성과 유지 보수에 좋지 않습니다. <br />
+            아래 type이 button인 button 요소를 클릭하게 되면 onclick으로 연결된 alert 메서드가 호출되게 되고, 시스템 대화상자로 "클릭했어요?"라는 문구가 화면에 나타나게 됩니다.
+          </p>
+          <button type="button" onclick="alert('클릭했어요?')">클릭</button>
+        </article>
+        <article class="contents">
+          <h3>Internal JavaScript 사용하기</h3>
+          <p>
+            Internal JavaScript는 HTML 파일 내부에서 script 요소를 사용해서 JavaScript 코드를 작성하는 방법입니다. <br />
+            head 요소 또는 body 요소 내부에 위치할 수 있지만, 주로 HTML DOM Tree가 생성되고 난 후에 적용되게 하기 위해서 body 요소 닫기 직전에 작성하게 됩니다.
+            <br />
+            이 방법도 유지보수와 가독성에 취약하므로 주의가 필요합니다.
+          </p>
+          <button type="button" class="js-click">클릭</button>
+        </article>
+        <article class="contents">
+          <h3>External JavaScript 사용하기</h3>
+          <p>External JavaScript는 JavaScript 코드를 작성하고 HTML 파일에서 이를 로드해서 사용하는데, 가장 권장되는 방법이며, 코드의 재사용성과 유지 보수가 용이합니다.</p>
+          <button type="button" class="js-clickOut">클릭</button>
+        </article>
+      </section>
+    </main>
+    <script>
+      document.querySelector('.js-click').onclick = function () {
+        alert('js-click 클래스 선택자를 사용해서 내부 스크립트를 사용해서 클릭했나요?');
+      };
+    </script>
+    <script src="../../public/js/chapter_5/5-1_javascript/01_javascript.js"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+div {
+  width: 1024px;
+  margin: 30px auto;
+  border: 1px dashed #ccc;
+}
+
+img,
+picture {
+  display: block;
+  margin: 20px auto;
+}
+
+.bg_webp {
+  display: block;
+  width: 600px;
+  height: 250px;
+  margin: 20px auto;
+
+  background-image: url('../../../img/unsplash/item_07.jpg');
+
+  @supports (background-image: url('../../../img/unsplash/item_07.webp')) {
+    background-image: url('../../../img/unsplash/item_07.webp');
+  }
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4-5_media_query-02_supports.html</title>
+    <link rel="stylesheet" href="../../public/css/reset.css" />
+    <link rel="stylesheet" href="../../public/css/common.css" />
+    <link rel="stylesheet" href="../../public/css/chapter_4/4-5_media_query/02_supports.css" />
+  </head>
+
+  <body>
+    <main class="main">
+      <h1 class="heading_1">Supports</h1>
+      <div class="supports">
+        <!-- chrome에서와 microsoft edge에서 지원이 다를 경우 img fallback -->
+        <picture>
+          <source srcset="../../public/img/sample.avif" type="image/avif" />
+          <img src="../../public/img/unsplash/item_01.jpg" alt="사파이어 색상의 의자" />
+        </picture>
+        <!-- webp지원 여부에 따른 background fallback -->
+        <div class="webp"></div>
+        <!-- chrome에서와 firefox 지원이 다를 경우 fallback -->
+        <progress value="20" max="100">progress : 20%</progress>
+      </div>
+    </main>
+  </body>
+</html>

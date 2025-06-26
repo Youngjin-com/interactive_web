@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01_login.html</title>
+    <link rel="stylesheet" href="../public/css/reset.css" />
+    <link rel="stylesheet" href="../public/css/chapter_7/01_login.css" />
+    <script src="../public/js/chapter_7/01_login.js" defer></script>
+  </head>
+
+  <body>
+    <div class="login">
+      <div class="character">
+        <div class="sunglasses">
+          <div class="sunglass"></div>
+          <div class="sunglass"></div>
+        </div>
+        <div class="eye right">
+          <i class="pupil"></i>
+        </div>
+        <div class="eye left">
+          <i class="pupil"></i>
+        </div>
+        <div class="mouth"></div>
+      </div>
+      <form action="./01_login.html">
+        <label for="email">
+          <input type="email" id="email" placeholder="copstyle@naver.com" autofocus required maxlength="40" />
+          <i class="icn icn_mail"></i>
+        </label>
+
+        <label for="password">
+          <input type="password" id="password" placeholder="비밀번호를 입력하세요." required maxlength="40" />
+          <i class="icn icn_eye js-eye"></i>
+        </label>
+        <button type="submit">로그인</button>
+      </form>
+    </div>
+  </body>
+</html>

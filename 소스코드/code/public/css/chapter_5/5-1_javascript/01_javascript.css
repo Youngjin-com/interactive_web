@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+.container {
+  max-width: 1024px;
+  margin: 30px auto;
+}
+
+.contents {
+  margin-bottom: 30px;
+}
+
+.contents h3 {
+  font-size: 30px;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.contents p {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.contents button {
+  width: 100%;
+  max-width: 200px;
+  padding: 12px 0;
+  margin-top: 10px;
+  background-color: dodgerblue;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contents button:hover {
+  background-color: rgb(27, 99, 255);
+}

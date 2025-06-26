@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5-5_function-02_expression.html</title>
+    <link rel="stylesheet" href="../../public/css/reset.css" />
+    <link rel="stylesheet" href="../../public/css/common.css" />
+    <link rel="stylesheet" href="../../public/css/chapter_5/5-5_function/01_function.css" />
+    <script src="../../public/js/chapter_5/5-5_function/02_expression.js" defer></script>
+  </head>
+
+  <body>
+    <main class="main">
+      <h1>Function</h1>
+      <article class="reusable">
+        <h2>함수의 재사용성 - form 유효성 검사(form validation)</h2>
+        <form action="/chapter_5/5-5_function/02_expression.html" method="post" id="login">
+          <label for="valid_email" class="form_email">
+            <input type="email" id="valid_email" name="validEmail" required placeholder="name@naver.com" />
+          </label>
+          <label for="valid_password" class="form_password">
+            <input type="password" id="valid_password" name="validPassword" required placeholder="비밀번호를 입력해 주세요." />
+          </label>
+          <button>로그인</button>
+        </form>
+      </article>
+      <article class="readable">
+        <h2>함수의 가독성 - 날짜와 시간 표시</h2>
+        <div class="result"></div>
+        <button type="button" class="js-dateTime">날짜와 시간</button>
+      </article>
+      <article class="modulable">
+        <h2>함수의 모듈성 - 세금 반영된 상품 계산</h2>
+        <p>10개 이상 구매시 할인율 20%</p>
+        <p>세금 8%</p>
+        <p>각 1,200원</p>
+        <div class="result"></div>
+        <button type="button" class="js-calculator">계산</button>
+      </article>
+      <article class="maintainable">
+        <h2>함수의 유지보수성 - 사용자 정보 업데이트</h2>
+        <div class="result"></div>
+        <button type="button" class="js-update">업데이트</button>
+      </article>
+    </main>
+  </body>
+</html>

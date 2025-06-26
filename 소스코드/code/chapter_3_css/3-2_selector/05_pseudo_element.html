@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3-2_selector-05_pseudo_element.html</title>
+    <link rel="stylesheet" href="../../public/css/reset.css" />
+    <link rel="stylesheet" href="../../public/css/chapter_3/3-2_selector/05_pseudo_element.css" />
+  </head>
+
+  <body>
+    <main class="main">
+      <h1 class="sr-only">선택자</h1>
+      <section>
+        <h2 class="sr-only">가상 요소선택자</h2>
+        <div data-id="before">::before, ::after</div>
+        <div data-id="after">::before, ::after</div>
+        <div data-value="first-letter">Lorem ipsum dolor sit amet.</div>
+        <div data-value="first-line">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, officia? Quo molestiae dicta cupiditate, beatae recusandae suscipit possimus accusantium ratione aut nulla cum sint a
+          earum expedita amet dolores explicabo tenetur? Harum corporis obcaecati ab libero expedita iste aperiam. Consectetur deserunt nisi tenetur repellat, ex est a praesentium impedit eos quia
+          cum, nesciunt blanditiis libero!
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

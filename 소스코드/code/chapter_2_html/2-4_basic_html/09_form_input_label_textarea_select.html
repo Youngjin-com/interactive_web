@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2-4_basic_html-09_form_input_label_textarea_select.html</title>
+    <style>
+      div {
+        margin: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="main">
+      <h1>&lt;form&gt;, &lt;input&gt;, &lt;label&gt;, &lt;textarea&gt;, &lt;select&gt;</h1>
+      <!-- sendPost는 임시 주소이고, 사용되지 않습니다. -->
+      <form action="./sendPost" method="POST" enctype="multipart/form-data">
+        <div>
+          <label for="id">아이디 : </label>
+          <input type="text" id="id" name="id" placeholder="아이디를 입력하세요." required />
+        </div>
+
+        <div>
+          <label for="password">비밀번호 : </label>
+          <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요." required />
+        </div>
+
+        <div>
+          <label for="gender">성별 : </label>
+          <select name="gender" id="gender">
+            <option value="female">여성</option>
+            <option value="male">남성</option>
+            <option value="diversity">다양성</option>
+          </select>
+        </div>
+
+        <div>
+          <h2>지역</h2>
+          <input type="radio" name="region" id="incheon" value="incheon" checked />
+          <label for="incheon">인천</label>
+
+          <input type="radio" name="region" id="seoul" value="seoul" />
+          <label for="seoul">서울</label>
+
+          <input type="radio" name="region" id="busan" value="busan" />
+          <label for="busan">부산</label>
+        </div>
+
+        <div>
+          <h2>좋아하는 음식</h2>
+          <input type="checkbox" name="food" id="chicken" value="chicken" />
+          <label for="chicken">치킨</label>
+
+          <input type="checkbox" name="food" id="beef" value="beef" checked />
+          <label for="beef">소고기</label>
+
+          <input type="checkbox" name="food" id="fish" value="fish" />
+          <label for="fish">생선</label>
+        </div>
+
+        <div>
+          <label for="birth">생년월일 : </label>
+          <input type="date" name="birth" id="birth" />
+        </div>
+
+        <div>
+          <label for="attach">첨부파일 : </label>
+          <input type="file" name="attach" id="attach" />
+        </div>
+
+        <div>
+          <h2><label for="message">메모</label></h2>
+          <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+        </div>
+
+        <div>
+          <label for="reset"></label>
+          <input type="reset" name="reset" id="reset" value="초기화" />
+
+          <label for="submit"></label>
+          <input type="submit" name="submit" id="submit" value="전송" />
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

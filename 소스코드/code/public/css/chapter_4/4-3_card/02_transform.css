@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+:root {
+  --bg-color: #e8fff4;
+  --text-color: #3a31ee;
+  --duration: 700ms;
+  --delay: 300ms;
+  --card-back-bg: #333;
+  --timing-function: cubic-bezier(0.275, 0.785, 0.34, 1.375);
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 1024px;
+  margin: 50px auto;
+  padding: 30px;
+  color: var(--text-color);
+}
+
+.card {
+  flex: 1 1 150px;
+  height: 240px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card_inner {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform var(--duration) var(--delay);
+}
+
+.card:hover .card_inner {
+  transform: rotateY(180deg);
+}
+
+.card_front,
+.card_back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 25px 30px;
+  border: 1px solid #ccc;
+  backface-visibility: hidden;
+}
+
+.card_front {
+  background-position: center center;
+  background-size: cover;
+}
+
+.card:nth-of-type(1) .card_front {
+  background-image: url(../../../img/unsplash/item_05.jpg);
+  filter: sepia(0.8);
+}
+
+.card:nth-of-type(2) .card_front {
+  background-image: url(../../../img/unsplash/item_06.jpg);
+  filter: grayscale(0.3);
+}
+
+.card:nth-of-type(3) .card_front {
+  background-image: url(../../../img/unsplash/item_07.jpg);
+  filter: blur(1px);
+}
+
+.card_back {
+  flex-direction: column;
+  background-color: var(--card-back-bg);
+  transform: rotateY(180deg);
+}
+
+.title {
+  display: block;
+  font-size: 30px;
+}
+
+.desc {
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.text_shadow_neon {
+  color: #fff;
+  background-color: var(--card-back-bg);
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 15px #fff,
+    0 0 20px #49ff18,
+    0 0 30px #49ff18,
+    0 0 40px #49ff18,
+    0 0 55px #49ff18,
+    0 0 75px #49ff18;
+}

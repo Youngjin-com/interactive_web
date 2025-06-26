@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+@layer base {
+  .icn {
+    display: block;
+    width: 1.4em;
+    height: 1.4em;
+    background-size: cover;
+    background-position: 0 0;
+  }
+
+  .icn_mail {
+    background-image: url('../img/freesvg/icn_mail.svg');
+  }
+
+  .icn_eye {
+    background-image: url('../img/freesvg/icn_eye_open.svg');
+  }
+
+  .icn_eye_close {
+    background-image: url('../img/freesvg/icn_eye_close.svg');
+  }
+}

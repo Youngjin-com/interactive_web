@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3-2_selector-03_class_id.html</title>
+    <link rel="stylesheet" href="../../public/css/reset.css" />
+    <link rel="stylesheet" href="../../public/css/chapter_3/3-2_selector/03_class_id.css" />
+  </head>
+
+  <body>
+    <main class="main">
+      <h1 class="sr-only">선택자</h1>
+      <section>
+        <h2 class="sr-only">클래스선택자</h2>
+        <article id="news_no_class">
+          <h3>클래스가 없는 제목</h3>
+          <div>클래스가 없는 뉴스 내용</div>
+          <span>클래스가 없는 뉴스 내용</span>
+          <em>클래스가 없는 뉴스 내용</em>
+        </article>
+        <article id="news_with_class" class="news">
+          <h3 class="news_title">클래스가 있는 제목</h3>
+          <div class="news_content">클래스가 있는 뉴스 내용</div>
+          <span class="news_content">클래스가 있는 뉴스 내용</span>
+          <em class="news_content">클래스가 있는 뉴스 내용</em>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

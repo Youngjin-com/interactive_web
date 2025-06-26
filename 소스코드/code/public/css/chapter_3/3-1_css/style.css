@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+.external_style {
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+  padding: 20px;
+  background-color: darkblue;
+  color: #fff;
+}

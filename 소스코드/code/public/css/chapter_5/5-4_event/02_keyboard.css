@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+:root {
+  --border-color: #333;
+}
+
+main {
+  width: 100%;
+  max-width: 1024px;
+  margin: 50px auto 0;
+}
+
+.info {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.keyboard {
+  margin-top: 30px;
+  padding: 20px;
+  border: 3px solid var(--border-color);
+}
+
+.keyboard h2 {
+  display: block;
+  width: 100%;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid var(--border-color);
+}
+
+.keyboard button {
+  position: relative;
+  height: 40px;
+  margin: 5px;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0px 1px 1px black;
+  border-bottom: 2px solid var(--border-color);
+  border-radius: 3px;
+  font-size: 1.1rem;
+}
+
+.keyboard button.pressed {
+  box-shadow: inset 0px 1px 5px black;
+  border-bottom-color: transparent;
+}
+
+.btn_refresh {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border: 3px solid var(--border-color);
+  cursor: pointer;
+}
+
+.btn_refresh:hover {
+  background-color: #333;
+  color: #fff;
+}

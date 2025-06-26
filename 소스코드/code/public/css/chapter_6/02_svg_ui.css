@@ -1,0 +1,192 @@
+@charset "utf-8";
+
+:root {
+  --duration: 0.3s;
+  --showing-duration: 1s;
+}
+
+/* 루트 요소 글꼴 크기 설정 */
+html {
+  font-size: 16px;
+}
+
+body {
+  background-image: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 230, 230, 0.8) 20%,
+    rgba(230, 255, 230, 0.8) 40%,
+    rgba(230, 230, 255, 0.8) 60%,
+    rgba(240, 240, 250, 0.7) 80%,
+    rgba(245, 245, 255, 0.6) 100%
+  );
+}
+
+.card_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding: 0 1rem;
+}
+
+.card {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 22rem;
+  margin: 1rem;
+  transform: translateY(0) scale(1);
+  transition: transform var(--duration) ease-out;
+}
+
+.card a {
+  display: block;
+  box-shadow: 0 0 6.25rem -3.125rem rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  transition:
+    transform var(--showing-duration) ease-out,
+    opacity var(--showing-duration),
+    box-shadow var(--showing-duration);
+}
+
+.card.hidden a {
+  opacity: 0;
+  transform: translateY(-0.625rem) scale(1.05);
+  box-shadow: 0 0 3rem 3rem rgba(0, 0, 0, 0.4);
+}
+
+.card picture {
+  display: block;
+  aspect-ratio: 1 / 1;
+}
+
+.card picture img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card_desc {
+  min-height: 7.75rem;
+  padding: 1.875rem 1.25rem;
+  color: #333;
+  background-color: #fff;
+}
+
+.card_desc strong {
+  display: block;
+  font-size: 1.25rem;
+}
+
+.card_desc span {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-0.625rem) scale(1.05);
+  }
+  .card:hover a {
+    box-shadow: 0 0.8rem 2rem -1rem rgba(0, 0, 0, 0.6);
+  }
+}
+
+@media (max-width: 1280px) {
+  html {
+    font-size: 14px;
+  }
+
+  .card {
+    max-width: 30rem;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .card_list {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .card {
+    flex-basis: 22rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+
+  .card_list {
+    flex-direction: column;
+    margin: 5rem auto;
+  }
+
+  .card {
+    flex-basis: auto;
+  }
+
+  .card ~ .card {
+    margin-top: 2rem;
+  }
+}
+
+/* svg path loading UI */
+.svg_loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 3rem;
+  height: 3rem;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.svg_loader svg {
+  width: 100%;
+  height: 100%;
+  animation: rotate 1.8s linear infinite;
+}
+
+.svg_loader circle {
+  fill: none;
+  stroke: #60a2e9;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 0;
+  animation: dash 1.56s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 300;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* svg animate loading UI */
+.svg_loader2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 5rem;
+  height: 5rem;
+  transform: translate3d(-50%, -50%, 0);
+}

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4-4_svg-02_animate.html</title>
+    <link rel="stylesheet" href="../../public/css/reset.css" />
+    <link rel="stylesheet" href="../../public/css/common.css" />
+    <link rel="stylesheet" href="../../public/css/chapter_4/4-4_svg/02_animate.css" />
+  </head>
+
+  <body>
+    <main class="main">
+      <h1 class="heading_1">SVG</h1>
+      <div class="svg_wrap">
+        <!-- <animate from to> -->
+        <svg width="100" height="100">
+          <circle cx="40" cy="40" r="20" fill="blue">
+            <animate attributeName="r" from="10" to="30" dur="2s" repeatCount="indefinite" />
+          </circle>
+        </svg>
+        <!-- <animate values> -->
+        <svg width="100" height="100">
+          <circle cx="40" cy="40" r="20" fill="blue">
+            <animate attributeName="r" values="10;30;10" dur="2s" repeatCount="indefinite" />
+          </circle>
+        </svg>
+        <!-- <animateTransform> -->
+        <svg width="100" height="100">
+          <rect x="10" y="10" width="30" height="30" fill="red">
+            <animateTransform attributeName="transform" type="rotate" begin="0s" dur="2s" from="0 25 25" to="360 35 25" repeatCount="indefinite" fill="freeze" additive="sum" />
+          </rect>
+        </svg>
+        <!-- <animateMotion calcMode=linear> -->
+        <svg width="200" height="200">
+          <path id="motionFollowPath" d="M10 80 Q 95 10 180 80" fill="transparent" stroke="blue" />
+          <rect x="0" y="0" width="20" height="20" fill="purple">
+            <animateMotion dur="2s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;0" keyTimes="0;0.5;1" calcMode="linear">
+              <mpath href="#motionFollowPath" />
+            </animateMotion>
+          </rect>
+        </svg>
+        <!-- animateMotion calcMode=spline -->
+        <svg width="200" height="200">
+          <path id="motionFollowPath" d="M10 80 Q 95 10 180 80" fill="transparent" stroke="blue" />
+          <rect x="0" y="0" width="20" height="20" fill="purple">
+            <animateMotion dur="2s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;0" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1">
+              <mpath href="#motionFollowPath" />
+            </animateMotion>
+          </rect>
+        </svg>
+        <!-- set -->
+        <svg width="300" height="200">
+          <rect x="20" y="20" width="60" height="60" fill="red">
+            <set attributeName="fill" to="green" begin="1s" dur="3s" fill="freeze" />
+          </rect>
+          <circle cx="150" cy="50" r="30" fill="blue">
+            <set attributeName="r" to="40" begin="1s" dur="2s" />
+          </circle>
+        </svg>
+        <!-- filter -->
+        <svg width="200" height="120">
+          <defs>
+            <filter id="filterEffect">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="0">
+                <animate attributeName="stdDeviation" values="0;5;0;" dur="3s" repeatCount="indefinite" />
+              </feGaussianBlur>
+            </filter>
+          </defs>
+          <rect width="90" height="90" stroke="green" stroke-width="3" fill="yellow" filter="url(#filterEffect)" />
+        </svg>
+        <!-- gradient -->
+        <svg width="200" height="200">
+          <defs>
+            <linearGradient id="gradientEffect">
+              <stop offset="0%" stop-color="#FFD700">
+                <animate attributeName="stop-color" values="#FFD700;#ec1920;#FFD700" dur="3s" repeatCount="indefinite" />
+              </stop>
+              <stop offset="50%" stop-color="#ec1920">
+                <animate attributeName="stop-color" values="#ec1920;#FFD700;#ec1920" dur="3s" repeatCount="indefinite" />
+              </stop>
+              <stop offset="100%" stop-color="#FFD700">
+                <animate attributeName="stop-color" values="#FFD700;#ec1920;#FFD700" dur="3s" repeatCount="indefinite" />
+              </stop>
+            </linearGradient>
+          </defs>
+          <polygon points="100,10 40,198 190,78 10,78 160,198" fill="url(#gradientEffect)" />
+        </svg>
+        <!-- clipping -->
+        <svg width="200" height="200">
+          <defs>
+            <clipPath id="clip-path">
+              <rect x="50" y="50" width="100" height="100">
+                <animate attributeName="width" values="100;150;100;" dur="2s" repeatCount="indefinite" />
+              </rect>
+            </clipPath>
+          </defs>
+          <circle cx="100" cy="100" r="80" fill="blue" />
+          <rect width="200" height="200" fill="orange" clip-path="url(#clip-path)" />
+        </svg>
+        <!-- masking -->
+        <svg width="200" height="200">
+          <defs>
+            <mask id="mask">
+              <rect width="100%" height="100%" fill="white" />
+              <polygon points="100,10 140,180 10,60 190,60 60,180" fill="purple">
+                <animate attributeName="points" values="100,10 140,180 10,60 190,60 60,180;100,50 140,180 50,85 150,85 60,180;100,10 140,180 10,60 190,60 60,180" dur="2s" repeatCount="indefinite" />
+              </polygon>
+            </mask>
+          </defs>
+          <rect width="200" height="200" fill="blue" mask="url(#mask)" />
+        </svg>
+      </div>
+    </main>
+  </body>
+</html>

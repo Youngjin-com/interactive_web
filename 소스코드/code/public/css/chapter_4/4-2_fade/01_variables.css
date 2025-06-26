@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+:root {
+  --bg-color: #e8fff4;
+  --text-color: #3a31ee;
+  --border-color: #2ac0b3;
+
+  --padding-size-10: 10px;
+  --padding-size-20: 20px;
+  --padding-size-30: 30px;
+
+  --margin-size-10: 10px;
+  --margin-size-20: 20px;
+  --margin-size-30: 30px;
+  --margin-size-40: 40px;
+  --margin-size-50: 50px;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color2, black);
+}
+
+.container {
+  max-width: 1024px;
+  margin: var(--margin-size-50) auto;
+  padding: var(--padding-size-30);
+  border: 3px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.container * {
+  margin: var(--padding-size-10);
+}
+
+.container p {
+  color: var(--text-color2, red);
+}

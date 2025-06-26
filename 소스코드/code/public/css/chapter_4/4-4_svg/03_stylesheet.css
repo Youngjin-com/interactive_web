@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+.svg_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+/* circle animation */
+@keyframes circleAnimation {
+  from {
+    r: 10;
+    cx: 20;
+  }
+  to {
+    r: 30;
+    cx: 60;
+  }
+}
+
+.animateCircle {
+  animation: circleAnimation 2s infinite alternate;
+}
+
+/* rect animation */
+@keyframes rectAnimation {
+  from {
+    transform: rotate(0deg);
+    fill: red;
+  }
+  to {
+    transform: rotate(360deg);
+    fill: blue;
+  }
+}
+
+.animateRect {
+  transform-origin: center;
+  animation: rectAnimation 2s infinite alternate-reverse ease-in;
+}
+
+/* linear gradient */
+@keyframes startGradientAnimation {
+  0% {
+    stop-color: red;
+  }
+  50% {
+    stop-color: yellow;
+  }
+  100% {
+    stop-color: red;
+  }
+}
+
+@keyframes endGradientAnimation {
+  0% {
+    stop-color: blue;
+  }
+  50% {
+    stop-color: green;
+  }
+  100% {
+    stop-color: blue;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0) scale(0);
+  }
+  100% {
+    transform: rotate(360deg) scale(0.8);
+  }
+}
+
+.start {
+  animation: startGradientAnimation 3s infinite;
+}
+
+.end {
+  animation: endGradientAnimation 3s infinite;
+}
+
+.gradient_polygon {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: rotate 2s infinite alternate cubic-bezier(0.63, 0.26, 0.21, 0.72);
+}
+
+/* mask animation */
+@keyframes maskAnimation {
+  0% {
+    r: 20;
+  }
+  50% {
+    r: 80;
+  }
+  100% {
+    r: 20;
+  }
+}
+
+.animateMask {
+  animation: maskAnimation 2s infinite;
+}
+
+/* path animation */
+@keyframes lineAnimation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.triangle {
+  width: 185px;
+  height: 165px;
+}
+
+.triangle path {
+  stroke-width: 2;
+  fill: transparent;
+  stroke: black;
+  stroke-dasharray: 542;
+  stroke-dashoffset: 542;
+  animation: lineAnimation 3s cubic-bezier(0.63, 0.26, 0.21, 0.22) forwards infinite alternate;
+}

@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+:root {
+  --bg-color: #e8fff4;
+  --border-color: #2ac0b3;
+  --duration: 1.4s;
+  --box-width: 80px;
+  --box-height: 40px;
+  --box-color: #ffe560;
+  --heading2-size: 26px;
+  --heading3-size: 22px;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+.container {
+  max-width: 1024px;
+  margin: 30px auto;
+  padding: 50px;
+  border: 3px solid var(--border-color);
+}
+
+.container h2 {
+  margin-bottom: 10px;
+  font-size: var(--heading2-size);
+}
+
+.container h3 {
+  font-size: var(--heading3-size);
+}
+
+.container article {
+  margin-bottom: 20px;
+  border: 2px solid var(--border-color);
+}
+
+.container article span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--box-width);
+  height: var(--box-height);
+  margin: 20px;
+  background-color: var(--box-color);
+  border: 1px solid var(--border-color);
+}
+
+.container .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px 0;
+}
+
+.container .head button {
+  cursor: pointer;
+  width: 80px;
+  height: 30px;
+  background-color: sandybrown;
+  color: #fff;
+  text-align: center;
+}
+
+.container .body {
+  display: flex;
+  align-items: center;
+}
+
+.ease {
+  transition-timing-function: ease;
+}
+
+.ease-in {
+  transition-timing-function: ease-in;
+}
+
+.ease-out {
+  transition-timing-function: ease-out;
+}
+
+.cubic {
+  transition-timing-function: cubic-bezier(0.91, 0.45, 0.14, 0.69);
+}
+
+[data-transition] {
+  transition-duration: var(--duration);
+  transition-property: all;
+}
+
+.opacity [data-transition] {
+  opacity: 0;
+}
+
+.translate [data-transition] {
+  transform: translateX(0);
+}
+
+.rotate [data-transition] {
+  transform: rotateY(0);
+}
+
+.scale [data-transition] {
+  transform: scale(0.7);
+}
+
+.opacity.active [data-transition] {
+  opacity: 1;
+}
+
+.translate.active [data-transition] {
+  transform: translateX(100%);
+}
+
+.rotate.active [data-transition] {
+  transform: rotateY(180deg);
+}
+
+.scale.active [data-transition] {
+  transform: scale(1.3);
+}

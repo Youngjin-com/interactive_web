@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4-4_svg-03_stylesheet.html</title>
+    <link rel="stylesheet" href="../../public/css/reset.css" />
+    <link rel="stylesheet" href="../../public/css/common.css" />
+    <link rel="stylesheet" href="../../public/css/chapter_4/4-4_svg/03_stylesheet.css" />
+  </head>
+
+  <body>
+    <main class="main">
+      <h1 class="heading_1">SVG</h1>
+      <div class="svg_wrap">
+        <!-- circle -->
+        <svg width="100" height="100">
+          <circle class="animateCircle" cx="40" cy="40" r="20" fill="blue"></circle>
+        </svg>
+        <!-- rect -->
+        <svg width="100" height="100">
+          <rect class="animateRect" x="30" y="30" width="20" height="20" fill="red"></rect>
+        </svg>
+        <!-- gradient -->
+        <svg width="200" height="200">
+          <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" class="start" />
+              <stop offset="100%" class="end" />
+            </linearGradient>
+          </defs>
+          <polygon points="100,10 40,198 190,78 10,78 160,198" fill="url(#gradient)" class="gradient_polygon" />
+        </svg>
+        <!-- mask -->
+        <svg width="200" height="200">
+          <defs>
+            <mask id="mask">
+              <rect width="100%" height="100%" fill="white" />
+              <circle cx="100" cy="100" r="20" fill="black" class="animateMask" />
+            </mask>
+          </defs>
+          <rect width="200" height="200" fill="purple" mask="url(#mask)" />
+        </svg>
+        <!-- path -->
+        <svg class="triangle">
+          <path d="m2.5,160l90,-157.5l90,157.5l-180,0z" />
+        </svg>
+      </div>
+    </main>
+  </body>
+</html>
